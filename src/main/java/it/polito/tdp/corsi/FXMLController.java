@@ -110,7 +110,7 @@ public class FXMLController {
     	for(Corso corso : corsiIscrizioni.keySet()) {
     		txtRisultato.appendText(corso.toString());
     		Integer n = corsiIscrizioni.get(corso);
-    		txtRisultato.appendText("\t" + n+ "\n");
+    		txtRisultato.appendText("\t" +n+ "\n");
     	}
     	
     }

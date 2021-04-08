@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +51,7 @@ public class CorsoDAO {
 				+ "where c.codins = i.codins and c.pd = ? "
 				+ "GROUP BY c.codins,c.crediti,c.nome,c.pd" ;
 		
-		Map<Corso,Integer> result = new LinkedHashMap<>();
+		Map<Corso,Integer> result = new HashMap<>();
 		
 		try {
 			
