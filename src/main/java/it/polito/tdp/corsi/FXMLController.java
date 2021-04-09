@@ -107,12 +107,25 @@ public class FXMLController {
     	
     	Map<Corso, Integer> corsiIscrizioni = this.model.getIscrittiByPeriodo(periodo) ;   
     	
-    	for(Corso corso : corsiIscrizioni.keySet()) {
+    	/*for(Corso corso : corsiIscrizioni.keySet()) {
     		txtRisultato.appendText(corso.toString());
     		Integer n = corsiIscrizioni.get(corso);
     		txtRisultato.appendText("\t" +n+ "\n");
+    	}*/
+    	
+    	txtRisultato.setStyle("-fx-font-family: monospace");
+    	
+    	StringBuilder sb = new StringBuilder() ;
+    	for(Corso c: corsiIscrizioni.keySet()) {
+    		sb.append(String.format("%-8s ", c.getCodins()));
+    		sb.append(String.format("%-4s ", c.getCrediti()));
+    		sb.append(String.format("%-50s ", c.getNome()));
+    		sb.append(String.format("%-4s ", c.getPd()));
+    		sb.append(String.format("%-10s\n", corsiIscrizioni.get(c)));
+    		
     	}
     	
+    	txtRisultato.appendText(sb.toString());
     }
 
     @FXML
